@@ -1,25 +1,40 @@
-import React from 'react';
-import { Container, InputWrapper, Input, Button, Text } from './styles';
+import React, { useState } from 'react';
+import { Container, InputWrapper, Text } from './styles';
 
-const Login = () => {
+import { Button } from '../../components/Forms/Button';
+import { Input } from '../../components/Forms/Input';
+import { AccRedirect } from '../../components/Forms/AccRedirect';
+
+const Login = ({ navigation }) => {
+
+  const [email, setEmail] = useState([]);
+  const [password, setPassword] = useState([]);
+
+  const handleLogin = () => {
+    console.log(`email: ${email}, password: ${password}`)
+  }
+
   return (
     <Container>
       <Text>Login page</Text>
       <InputWrapper>
         <Input
           placeholder={'E-mail'}
-        // onChangeText={setEmail}
+          onChangeText={setEmail}
         />
         <Input
           placeholder={'Senha'}
-          // onChangeText={setPassword}
-          secureTextEntry={true}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+        <Button
+          title="LOGIN"
+          onPress={handleLogin}
         />
       </InputWrapper>
 
-      <Button
-        title="LOGIN"
-      />
+      <AccRedirect onPress={() => { navigation.navigate('Register') }} />
+
 
     </Container>
   );
