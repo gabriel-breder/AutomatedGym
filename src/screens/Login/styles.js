@@ -4,9 +4,13 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
+
+  background-color: black;
 `;
 
-export const Text = styled.Text``;
+export const Text = styled.Text`
+  color: ${({ theme }) => theme.colors.text}
+`;
 
 export const InputWrapper = styled.View`
   width: 80%;
