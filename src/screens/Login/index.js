@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Container, InputWrapper, Text } from './styles';
+import { Container, LoginContainer, InputWrapper, Icon, NoAccWrapper } from './styles';
 
 import { Button } from '../../components/Forms/Button';
 import { Input } from '../../components/Forms/Input';
 import { AccRedirect } from '../../components/Forms/AccRedirect';
+
+import Logo from '../../assets/images/logo.png';
 
 const Login = ({ navigation }) => {
 
@@ -16,26 +18,27 @@ const Login = ({ navigation }) => {
 
   return (
     <Container>
-      <Text>Login page</Text>
-      <InputWrapper>
-        <Input
-          placeholder={'E-mail'}
-          onChangeText={setEmail}
-        />
-        <Input
-          placeholder={'Senha'}
-          onChangeText={setPassword}
-          secureTextEntry
-        />
-        <Button
-          title="LOGIN"
-          onPress={handleLogin}
-        />
-      </InputWrapper>
-
-      <AccRedirect onPress={() => { navigation.navigate('Register') }} />
-
-
+      <Icon
+        source={Logo}
+      />
+      <LoginContainer>
+        <InputWrapper>
+          <Input
+            placeholder={'E-mail'}
+            onChangeText={setEmail}
+          />
+          <Input
+            placeholder={'Senha'}
+            onChangeText={setPassword}
+            secureTextEntry
+          />
+          <Button
+            title="ENTRAR"
+            onPress={handleLogin}
+          />
+        </InputWrapper>
+        <NoAccWrapper><AccRedirect onPress={() => { navigation.navigate('Register') }} /></NoAccWrapper>
+      </LoginContainer>
     </Container>
   );
 }
