@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
+import { ThemeProvider } from 'styled-components';
+import theme from './src/global/styles/theme';
+import { Routes } from './src/routes/Routes';
+import { GlobalProvider } from './src/context/GlobalContext';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <GlobalProvider>
+      <ThemeProvider theme={theme}>
+        <StatusBar barStyle="light-content" />
+        <Routes />
+      </ThemeProvider>
+    </GlobalProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
