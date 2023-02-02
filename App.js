@@ -8,7 +8,12 @@ export default function App() {
   return (
     <GlobalProvider>
       <ThemeProvider theme={theme}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar
+          animated={true}
+          backgroundColor="transparent"
+          barStyle={"light-content"}
+          translucent={true}
+        />
         <Routes />
       </ThemeProvider>
     </GlobalProvider>
