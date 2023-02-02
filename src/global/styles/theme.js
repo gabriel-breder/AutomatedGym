@@ -6,12 +6,13 @@ export default {
     gray: '#737373',
     text_dark: '#000',
     text: '#E5E5E5',
+    background: '#000'
   },
 
   fonts: {
-    regular: 'Poppins_400Regular',
-    medium: 'Poppins_500Medium',
-    bold: ' Poppins_700Bold',
+    regular: 'Roboto_400Regular',
+    medium: 'Roboto_500Medium',
+    bold: 'Roboto_700Bold',
   },
 };
 
