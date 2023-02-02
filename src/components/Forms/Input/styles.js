@@ -15,4 +15,7 @@ export const Container = styled(TextInput).attrs((props) => ({
   border-radius: 10px;
 
   color: #E5E5E5;
+
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-size: ${RFValue(13)}px;
 `;

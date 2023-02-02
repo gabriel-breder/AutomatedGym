@@ -4,17 +4,19 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import { TouchableOpacity } from 'react-native';
 
 export const Container = styled(TouchableOpacity)`
-  background-color: #FCA311;
+  background-color: ${({ theme }) => theme.colors.orange};
+  
   width: 100%;
   margin: 5px 0;
-  padding: 10px;
-
-  border-radius: 10px;
-
+  padding: 12px 10px;
   
-`;
+  border-radius: 10px;
+  `;
 
 export const Title = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-size: ${RFValue(13.5)}px;
+
   text-align: center;
   color: #14213D;
 `;
