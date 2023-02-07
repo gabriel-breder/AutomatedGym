@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container, LoginContainer, InputWrapper, Icon, NoAccWrapper } from './styles';
 
 import { Button } from '../../components/Forms/Button';
@@ -6,14 +6,21 @@ import { Input } from '../../components/Forms/Input';
 import { AccRedirect } from '../../components/Forms/AccRedirect';
 
 import Logo from '../../assets/images/logo.png';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const Login = ({ navigation }) => {
+  const context = useContext(GlobalContext);
 
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
 
   const handleLogin = () => {
-    console.log(`email: ${email}, password: ${password}`)
+    const body = {
+      email: email,
+      password: password
+    }
+
+    context.handleLogin(body, navigation)
   }
 
   return (
