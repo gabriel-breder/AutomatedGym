@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container, Icon, RegisterContainer, InputWrapper, NoAccWrapper } from './styles';
 
 import { Button } from '../../components/Forms/Button';
@@ -6,15 +6,24 @@ import { Input } from '../../components/Forms/Input';
 import { AccRedirect } from '../../components/Forms/AccRedirect';
 
 import Logo from '../../assets/images/logo.png';
+import { GlobalContext } from '../../context/GlobalContext';
 
 const Register = ({ navigation }) => {
 
+  const context = useContext(GlobalContext);
+
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
-  const [confirmPassword, setConfirmPassword] = useState([]);
+  const [passwordConfirmation, setPasswordConfirmation] = useState([]);
 
   const handleRegister = () => {
-    console.log(`email: ${email}, password: ${password}, confirmPassword: ${confirmPassword}`)
+    const body = {
+      email: email,
+      password: password,
+      password_confirmation: passwordConfirmation
+    }
+
+    context.handleRegister(body, navigation)
   }
 
   return (
@@ -35,7 +44,7 @@ const Register = ({ navigation }) => {
           />
           <Input
             placeholder={'Confirmar senha'}
-            onChangeText={setConfirmPassword}
+            onChangeText={setPasswordConfirmation}
             secureTextEntry
           />
           <Button
