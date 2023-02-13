@@ -44,7 +44,7 @@ const Login = ({ navigation }) => {
             onPress={handleLogin}
           />
         </InputWrapper>
-        <NoAccWrapper><AccRedirect onPress={() => { navigation.navigate('Register') }} /></NoAccWrapper>
+        <NoAccWrapper><AccRedirect onPress={() => { navigation.replace('Register') }} /></NoAccWrapper>
       </LoginContainer>
     </Container>
   );

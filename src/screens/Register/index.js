@@ -52,7 +52,7 @@ const Register = ({ navigation }) => {
             onPress={handleRegister}
           />
         </InputWrapper>
-        <NoAccWrapper><AccRedirect register onPress={() => { navigation.navigate('Login') }} /></NoAccWrapper>
+        <NoAccWrapper><AccRedirect register onPress={() => { navigation.replace('Login') }} /></NoAccWrapper>
       </RegisterContainer>
     </Container>
   );
