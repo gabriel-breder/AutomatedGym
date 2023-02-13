@@ -6,6 +6,7 @@ import Login from '../screens/Login';
 import Register from '../screens/Register';
 import Splash from '../screens/Splash';
 import { MainTab } from './MainTab';
+import Preload from '../screens/Preload';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,7 @@ export const MainStack = () => {
   return (
     <NavigationContainer >
       <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Preload" component={Preload} />
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Login" component={Login} />
