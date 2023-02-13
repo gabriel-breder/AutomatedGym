@@ -9,12 +9,11 @@ export function useAuth() {
   const handleLogin = (body, navigation) => {
     api.post('/auth/sign_in', body)
       .then(res => {
-        setUser(res.data)
-        console.log(res.data)
+        setUser(res.data["data"])
+        navigation.navigate('Home');
       })
       .catch(error => {
         console.log(error)
-        console.log(body)
         setError(true)
       })
   }
@@ -22,12 +21,11 @@ export function useAuth() {
   const handleRegister = (body, navigation) => {
     api.post('/auth', body)
       .then(res => {
-        setUser(res.data)
-        console.log(user)
+        setUser(res.data["data"])
+        navigation.navigate('Home');
       })
       .catch(error => {
         console.log(error)
-        console.log(body)
         setError(true)
       })
   }
