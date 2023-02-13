@@ -5,7 +5,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: space-evenly;
 
-  background-color: black;
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const LoginContainer = styled.View`
