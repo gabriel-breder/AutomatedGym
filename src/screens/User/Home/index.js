@@ -3,8 +3,11 @@ import { Container, Header, Title, Separator } from './styles';
 
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import { GlobalContext } from '../../context/GlobalContext';
+import { GlobalContext } from '../../../context/GlobalContext';
 import { useTheme } from 'styled-components';
+import NextWorkout from '../../../components/Cards/NextWorkout';
+import MyWorkouts from '../../../components/Cards/MyWorkouts';
+import AddWorkout from '../../../components/AddWorkout';
 
 const Home = () => {
   const context = useContext(GlobalContext);
@@ -19,6 +22,14 @@ const Home = () => {
       </Header>
       <Separator />
       <Title>Próximo Treino</Title>
+      <NextWorkout />
+      <Separator />
+      <Title>Minhas Fichas</Title>
+      <MyWorkouts />
+      <MyWorkouts />
+      <MyWorkouts />
+      <AddWorkout />
+
     </Container>
   );
 }
